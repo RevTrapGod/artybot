@@ -1,8 +1,11 @@
 from discord.ext import commands
 import discord
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+TOKEN = os.getenv('DISCORD_TOKEN')
 # don't ever commit with this token here you dumbfuck :o
-token =  '%placeholder%'
 bot = commands.Bot(command_prefix='k!')
 
 
@@ -10,4 +13,4 @@ bot = commands.Bot(command_prefix='k!')
 async def echo(ctx, arg):
   await ctx.send(arg)
 
-bot.run(token)
+bot.run(TOKEN)

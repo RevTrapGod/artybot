@@ -63,3 +63,5 @@ target/
 
 Scripts/  
 pyvenv.cfg 
+
+.env
