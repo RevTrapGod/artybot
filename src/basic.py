@@ -13,3 +13,20 @@ class Basic(commands.Cog):
     time = (d.timestamp(d.now()) - start) * 1000
     await msg.edit(content=f'Pong\nOne message round-trip {time}ms.')
     return
+
+  @commands.command(name='echo', description='The echo command')
+  async def echo_command(self, ctx):
+    msg = ctx.message.content
+
+    prefix = ctx.prefix
+    alias = ctx.invoked_with
+    text = msg[len(prefix) + len(alias):]
+    if text == '':
+      await ctx.send(content='You need to specify the text!')
+    else:
+      await ctx.send(content=f'**{text}**')
+    return
+
+
+
+    
