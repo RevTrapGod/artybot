@@ -13,4 +13,8 @@ bot = commands.Bot(command_prefix='k!')
 async def echo(ctx, arg):
   await ctx.send(arg)
 
+@bot.command(name="up")
+async def you_up(ctx):
+  await ctx.send('u up? lmao')
+
 bot.run(TOKEN)
