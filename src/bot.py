@@ -1,6 +1,12 @@
 from discord.ext import commands
 import discord
+from basic import Basic
 
-class ArtemisBot(commands.Bot):
+class Artemis(commands.Bot):
   def __init__(self):
-    self.command_prefix = 'k!'
+    super().__init__(
+      command_prefix=['k!', 'K!', 'a!', 'A!'], 
+      case_insensitive = True
+    )
+
+    self.add_cog(Basic(self))
