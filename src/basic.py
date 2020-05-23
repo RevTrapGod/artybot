@@ -1,6 +1,7 @@
 from discord.ext import commands
 from datetime import datetime as d
 from timer import Timer
+import random
 
 class Basic(commands.Cog):
   def __init__(self, bot):
@@ -30,9 +31,10 @@ class Basic(commands.Cog):
 
 
   async def meow(self):
-    pass
-    # channel =  self.bot.get_channel()
-    # await channel.send('MEOW!!')
+    if random.random() < .05:
+      channel =  self.bot.get_channel(710729000556953654) #hard coded channel id for general 
+      await channel.send('MEOW!!')
+    return
 
   
 
