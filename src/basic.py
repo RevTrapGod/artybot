@@ -1,10 +1,11 @@
 from discord.ext import commands
 from datetime import datetime as d
-
+from timer import Timer
 
 class Basic(commands.Cog):
   def __init__(self, bot):
     self.bot = bot
+    self.meow_timer = Timer(self.meow)
 
   @commands.command(name='ping', description='The ping commmand')
   async def ping_command(self, ctx):
@@ -26,6 +27,14 @@ class Basic(commands.Cog):
     else:
       await ctx.send(content=f'**{text}**')
     return
+
+
+  async def meow(self):
+    pass
+    # channel =  self.bot.get_channel()
+    # await channel.send('MEOW!!')
+
+  
 
 
 
