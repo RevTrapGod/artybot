@@ -32,7 +32,7 @@ class Basic(commands.Cog):
 
   async def meow(self):
     if random.random() < .15:
-      channel =  self.bot.get_channel(710729000556953654) #hard coded channel id for general 
+      channel =  self.bot.get_channel(714225123368108072) #hard coded meow channel id for now
       await channel.send('meow')
     return
 
