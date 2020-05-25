@@ -1,12 +1,14 @@
 from discord.ext import commands
 from datetime import datetime as d
 from timer import Timer
+from periodic import Periodic
 import random
 
 class Basic(commands.Cog):
   def __init__(self, bot):
     self.bot = bot
-    self.meow_timer = Timer(self.meow)
+    self.meow_timer = Periodic(60 * 5, self.meow)
+    self.set_hunger_level()
 
   @commands.command(name='ping', description='The ping commmand')
   async def ping_command(self, ctx):
@@ -29,12 +31,26 @@ class Basic(commands.Cog):
       await ctx.send(content=f'**{text}**')
     return
 
+  @commands.command(name='feed', description='Feed Artemis so she won\'t meow for 5 hours')
+  async def feed_command(self, ctx):
+    self.should_meow = False
+    Timer(60 * 60 * 5, self.set_hunger_level)
+    await ctx.send('Thanks for feeding me ILY!')
+    return
 
   async def meow(self):
-    if random.random() < .15:
-      channel =  self.bot.get_channel(714225123368108072) #hard coded meow channel id for now
+    if self.should_meow and random.random() < .75 :
+      channel =  self.bot.get_channel(714225123368108072) #hard coded channel id for general 
       await channel.send('meow')
     return
+
+  def set_hunger_level(self):
+    self.should_meow = True
+
+
+  
+
+  
 
   
 
