@@ -48,6 +48,22 @@ class Basic(commands.Cog):
     self.should_meow = True
 
 
+  @commands.command(name='fuckboi', description='Arty says sum shi')
+  async def fuckbot_command(self, ctx):
+    phrases = [
+      'u up? lmao', 
+      'send nudes', 
+      'what\'s poppin', 
+      'wyd bb', 
+      'show nip bb', 
+      'u should smile', 
+      'i\'m not like other cats', 
+      'lookin juicy'
+    ]
+
+    await ctx.send(random.choice(phrases))
+
+
   
 
   
