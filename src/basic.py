@@ -72,7 +72,7 @@ class Basic(commands.Cog):
   async def add_club_tip_command(self, ctx, user: discord.Member):
     await ctx.send(f'{user.id}')
 
-      @commands.command(name'headpat', description='Give Arty much deserved head pats')
+  @commands.command(name'headpat', description='Give Arty much deserved head pats')
   async def headpat_command (self, ctx):
     phrases = [
       'MEW :3',
@@ -86,14 +86,6 @@ class Basic(commands.Cog):
   async def rage_command(self, ctx):
     await ctx.send('lazer eyes go pew (⁎˃ᆺ˂)')
     return
-
-##  async def attention(self): #probably non-functional -- wip
-##    member_object = random.choice(server.members)
-##    if self.should_attention and random.random() <.33 :
-##      while not (member_object)client.is_closed:
-##        channel = self.bot.get_channel(714225123368108072)
-##        await channel.send(member_object.mention + 'atenshuns pls')
-##    return
       
 
     
