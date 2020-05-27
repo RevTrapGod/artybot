@@ -1,4 +1,5 @@
 from discord.ext import commands
+import discord
 from datetime import datetime as d
 from timer import Timer
 from periodic import Periodic
@@ -66,6 +67,10 @@ class Basic(commands.Cog):
     translation_result = self.translator.translate(text, dest='ko')
     await ctx.send(translation_result.text)
     return
+
+  @commands.command(name='clubtip')
+  async def add_club_tip_command(self, ctx, user: discord.Member):
+    await ctx.send(f'{user.id}')
 
   async def meow(self):
     if self.should_meow and random.random() < .75 :
